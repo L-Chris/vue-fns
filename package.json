@@ -1,5 +1,5 @@
 {
-  "name": "@l-chris/vue-use",
+  "name": "@l-chris/vue-fns",
   "description": "Collection of Vue Hooks",
   "version": "0.1.0",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "keywords": [
     "vue",
-    "vue-use",
+    "vue-fns",
     "vue-hooks",
     "vue-function-api",
     "vue-composition-api"
@@ -45,12 +45,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/L-Chris/vue-use"
+    "url": "https://github.com/L-Chris/vue-fns"
   },
   "bugs": {
-    "url": "https://github.com/L-Chris/vue-use/issues"
+    "url": "https://github.com/L-Chris/vue-fns/issues"
   },
-  "homepage": "https://github.com/L-Chris/vue-use#readme",
+  "homepage": "https://github.com/L-Chris/vue-fns#readme",
   "engines": {
     "node": ">=10.16.0"
   },

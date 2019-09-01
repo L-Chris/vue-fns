@@ -22,6 +22,7 @@ const Demo = createComponent({
 
   render(this: Vue & Inject) {
     const { title } = this;
+
     return (
       <div>
         <div>title: {title}</div>
