@@ -1,5 +1,6 @@
 node_modules/
 storybook-static/
-coverage/
 lib/
 esm/
+package.json
+CHANGELOG.md

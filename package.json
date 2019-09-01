@@ -1,0 +1,133 @@
+{
+  "name": "@l-chris/vue-use",
+  "description": "Collection of Vue Hooks",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "vue",
+    "vue-use",
+    "vue-hooks",
+    "vue-function-api",
+    "vue-composition-api"
+  ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "scripts": {
+    "start": "yarn storybook",
+    "storybook": "start-storybook -p 3000",
+    "storybook:build": "build-storybook",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "yarn clean && yarn build:cjs && yarn build:es",
+    "clean": "rimraf lib esm",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:types": "tsc --noEmit",
+    "lint:prettier": "prettier '**/*.{ts,md,mdx}' --check",
+    "format": "prettier '**/*.{ts,md,mdx}' --write",
+    "release": "semantic-release",
+    "prepublishOnly": "yarn test && yarn build"
+  },
+  "author": {
+    "name": "L-Chris",
+    "email": "563303226@qq.com",
+    "url": "http://www.greedzone.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/L-Chris/vue-use"
+  },
+  "bugs": {
+    "url": "https://github.com/L-Chris/vue-use/issues"
+  },
+  "homepage": "https://github.com/L-Chris/vue-use#readme",
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
+    "@storybook/addon-knobs": "^5.1.11",
+    "@storybook/addon-notes": "^5.1.11",
+    "@storybook/theming": "^5.1.11",
+    "@storybook/vue": "^5.1.11",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.2",
+    "@types/storybook__vue": "^5.0.2",
+    "@typescript-eslint/parser": "^2.0.0",
+    "@vue/babel-preset-jsx": "^1.1.0",
+    "@vue/composition-api": "^0.2.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "all-contributors-cli": "^6.8.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "github-markdown-css": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.3",
+    "markdown-it": "^9.1.0",
+    "markdown-it-highlight-lines": "^1.0.2",
+    "markdown-it-link-attributes": "^2.1.0",
+    "markdown-it-loader": "^0.7.0",
+    "markdown-it-prism": "^2.0.2",
+    "match-media-mock": "^0.1.1",
+    "prettier": "^1.18.2",
+    "prismjs": "^1.17.1",
+    "rimraf": "^3.0.0",
+    "semantic-release": "^15.13.24",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-router": "^3.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "vue-tsx-support": "^2.3.1",
+    "vuex": "^3.1.1",
+    "yorkie": "^2.0.0"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.{ts,md,mdx}": [
+      "prettier --write",
+      "prettier --check",
+      "git add"
+    ]
+  }
+}
