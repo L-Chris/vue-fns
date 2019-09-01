@@ -2,9 +2,9 @@ import VueCompositionAPI, { createComponent } from '@vue/composition-api'
 import { Data, SetupFunction } from '@vue/composition-api/dist/component'
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import Vue from 'vue'
+import { createRouter, createStore } from 'vue-fns/src/mocks'
 
 import hooks from '..'
-import { createRouter, createStore } from '../mocks'
 
 const localVue = createLocalVue()
 const router = createRouter(localVue)

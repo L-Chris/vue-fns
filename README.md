@@ -17,33 +17,33 @@
 </div>
 
 - [**Sensors**](./docs/Sensors.md)
-  - [`useWindowSize`](./docs/useWindowSize.md) &mdash; tracks `Window` dimensions.
+  - [`useWindowSize`](./packages/useWindowSize/useWindowSize.md) tracks `Window` dimensions.
     <br/>
     <br/>
 - [**Animations**](./docs/Animations.md)
-  - [`useInterval`](./docs/useInterval.md) and [`useHarmonicIntervalFn`](./docs/useHarmonicIntervalFn.md) &mdash; re-renders component on a set interval using `setInterval`.
-  - [`useTimeout`](./docs/useTimeout.md) &mdash; re-renders component after a timeout.
-  - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout.
+  - [`useInterval`](./packages/useInterval/useInterval.md) re-renders component on a set interval using `setInterval`.
+  - [`useTimeout`](./packages/useTimeout/useTimeout.md) re-renders component after a timeout.
+  - [`useTimeoutFn`](./packages/useTimeoutFn/useTimeoutFn.md) calls given function after a timeout.
     <br/>
     <br/>
 - [**Side-effects**](./docs/Side-effects.md)
-  - [`useAsync`](./docs/useAsync.md) &mdash; resolves an `async` function.
-  - [`useAsyncFn`](./docs/useAsyncFn.md) &mdash; state management for an async function
-  - [`useTitle`](./docs/useTitle.md) &mdash; sets title of the page.
+  - [`useAsync`](./packages/useAsync/useAsync.md) resolves an `async` function.
+  - [`useAsyncFn`](./packages/useAsyncFn/useAsyncFn.md) state management for an async function
+  - [`useTitle`](./packages/useTitle/useTitle.md) sets title of the page.
     <br/>
     <br/>
 - [**State**](./docs/State.md)
-  - [`usePrevious`](./docs/usePrevious.md) &mdash; returns the previous state or props.
-  - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number.
+  - [`usePrevious`](./packages/usePrevious/usePrevious.md) returns the previous state or props.
+  - [`useCounter` and `useNumber`](./packages/useCounter/useCounter.md) tracks state of a number.
     <br/>
     <br/>
-- [**Vuex**]
-  - [`useState`](./docs/useState.md) &mdash;
-  - [`useGetters`](./docs/useGetters.md) &mdash;
-  - [`useMutations`](./docs/useMutations.md) &mdash;
-  - [`useActions`](./docs/useActions.md) &mdash;
-  - [`useStore`](./docs/useStore.md) &mdash;
+- [**Vuex**](./docs/Vuex.md)
+  - [`useState`](./packages/useState/useState.md)
+  - [`useGetters`](./packages/useGetters/useGetters.md)
+  - [`useMutations`](./packages/useMutations/useMutations.md)
+  - [`useActions`](./packages/useActions/useActions.md)
+  - [`useStore`](./packages/useStore/useStore.md)
     <br/>
     <br/>
-- [**Vue-Router**]
-  - [`useRouter`](./docs/useRouter.md) &mdash;
+- [**Vue-Router**](./docs/Vue-Router.md)
+  - [`useRouter`](./packages/useRouter/useRouter.md)

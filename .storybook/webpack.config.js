@@ -1,8 +1,11 @@
+const path = require('path')
 const prism = require('markdown-it-prism');
 const highlightLines = require('markdown-it-highlight-lines');
 const linkAttributes = require('markdown-it-link-attributes');
 
 module.exports = ({ config }) => {
+  config.resolve.alias['vue-fns'] = path.join(__dirname, '..')
+
   config.module.rules.push({
     test: /\.md$/,
     use: [

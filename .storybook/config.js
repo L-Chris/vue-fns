@@ -24,7 +24,7 @@ Vue.use(VueCompositionAPI);
 Vue.use(hooks);
 
 function loadStories() {
-  const req = require.context('../src', true, /\.story\.tsx$/);
+  const req = require.context('../packages', true, /\.story\.tsx$/);
   req.keys().forEach((mod) => req(mod));
 }
 

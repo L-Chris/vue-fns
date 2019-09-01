@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "declaration": true,
     "pretty": true,
-    "rootDir": "src",
+    "baseUrl": ".",
     "sourceMap": false,
     "strict": true,
     "noUnusedLocals": true,
@@ -19,14 +19,23 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "outDir": "lib",
-    "lib": ["dom", "dom.iterable", "esnext"]
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "vue-fns/*": ["./*"]
+    }
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "packages/**/*.ts",
+    "packages/**/*.tsx"
+  ],
   "exclude": [
     "node_modules",
     "lib",
     "esm",
-    "**/__tests__/**/*",
-    "**/__stories__/**/*",
+    "**/*.test.ts",
+    "**/*.story.tsx",
     "src/util/renderHook.ts"
   ]
 }

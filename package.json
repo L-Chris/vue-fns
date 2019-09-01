@@ -12,29 +12,28 @@
     "vue-function-api",
     "vue-composition-api"
   ],
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "module": "esm/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "typings": "lib/src/index.d.ts",
   "files": [
     "lib/",
     "esm/"
   ],
   "scripts": {
-    "start": "yarn storybook",
-    "storybook": "start-storybook -p 3000",
-    "storybook:build": "build-storybook",
+    "start": "start-storybook -p 3000",
     "test": "jest",
     "test:watch": "jest --watch",
     "build:cjs": "tsc",
+    "build:docs": "build-storybook",
     "build:es": "tsc -m esNext --outDir esm",
+    "build:publish": "yarn test && yarn build",
     "build": "yarn clean && yarn build:cjs && yarn build:es",
     "clean": "rimraf lib esm",
     "lint": "eslint src/**/*.{ts,tsx} --fix",
     "lint:types": "tsc --noEmit",
     "lint:prettier": "prettier '**/*.{ts,md,mdx}' --check",
-    "format": "prettier '**/*.{ts,md,mdx}' --write",
-    "build:publish": "yarn test && yarn build"
+    "format": "prettier '**/*.{ts,md,mdx}' --write"
   },
   "author": {
     "name": "L-Chris",
