@@ -1,21 +1,21 @@
-import { ref, onMounted, onUnmounted } from '@vue/composition-api';
+import { onMounted, onUnmounted, ref } from '@vue/composition-api'
 
 export default function useMedia(query, defaultState = false) {
-  let mql;
-  const matches = ref(defaultState);
+  let mql
+  const matches = ref(defaultState)
   const updateMatches = () => {
-    if (mql) matches.value = mql.matches;
-  };
+    if (mql) matches.value = mql.matches
+  }
 
   onMounted(() => {
-    mql = window.matchMedia(query);
-    mql.addListener(updateMatches);
-    matches.value = mql.matches;
-  });
+    mql = window.matchMedia(query)
+    mql.addListener(updateMatches)
+    matches.value = mql.matches
+  })
 
   onUnmounted(() => {
-    mql.removeListener(updateMatches);
-  });
+    mql.removeListener(updateMatches)
+  })
 
-  return matches;
+  return matches
 }

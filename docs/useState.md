@@ -1,6 +1,6 @@
 # useState
 
-> You need to [use a plugin](https://github.com/u3u/vue-hooks#usage) before using this hook.
+> You need to [use a plugin](https://github.com/L-Chris/vue-fns#usage) before using this hook.
 
 Vue hook for [`mapState`](https://vuex.vuejs.org/api/#mapstate).
 
@@ -8,7 +8,7 @@ Vue hook for [`mapState`](https://vuex.vuejs.org/api/#mapstate).
 
 ```jsx {7,8,14,18}
 import { createComponent, computed } from '@vue/composition-api';
-import { useState } from '@u3u/vue-hooks';
+import { useState } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {

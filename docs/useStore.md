@@ -1,6 +1,6 @@
 # useStore
 
-> You need to [use a plugin](https://github.com/u3u/vue-hooks#usage) before using this hook.
+> You need to [use a plugin](https://github.com/L-Chris/vue-fns#usage) before using this hook.
 
 Vue hook for [vuex](https://vuex.vuejs.org).
 
@@ -8,7 +8,7 @@ Vue hook for [vuex](https://vuex.vuejs.org).
 
 ```jsx {6,12,16}
 import { createComponent, computed } from '@vue/composition-api';
-import { useStore } from '@u3u/vue-hooks';
+import { useStore } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {

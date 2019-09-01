@@ -1,30 +1,27 @@
-import { ref, onMounted, onUnmounted } from '@vue/composition-api';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import { onMounted, onUnmounted, ref } from '@vue/composition-api'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
-dayjs.extend(relativeTime);
+dayjs.extend(relativeTime)
 
-export default function useDate(
-  d: dayjs.ConfigType = Date.now(),
-  timeout: number = 0,
-) {
-  const date = ref(dayjs(d));
+export default function useDate(d: dayjs.ConfigType = Date.now(), timeout: number = 0) {
+  const date = ref(dayjs(d))
 
   if (timeout) {
-    let timerId: number;
+    let timerId: number
 
     onMounted(() => {
       timerId = window.setInterval(() => {
-        date.value = dayjs(Date.now());
-      }, timeout);
-    });
+        date.value = dayjs(Date.now())
+      }, timeout)
+    })
 
     onUnmounted(() => {
-      window.clearInterval(timerId);
-    });
+      window.clearInterval(timerId)
+    })
   }
 
-  return date;
+  return date
 }
 
-export { dayjs };
+export { dayjs }

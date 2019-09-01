@@ -1,4 +1,4 @@
-# useWindowSize
+# useTitle
 
 Vue hook that tracks dimensions of the browser window.
 
@@ -6,20 +6,19 @@ Vue hook that tracks dimensions of the browser window.
 
 ```jsx {6,11}
 import { createComponent } from '@vue/composition-api';
-import { useWindowSize } from '@u3u/vue-hooks';
+import { useTitle } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {
-    const { width, height } = useWindowSize();
-    return { width, height };
+    const { title } = useTitle('title');
+    return { title };
   },
 
   render() {
-    const { width, height } = this;
+    const { title } = this;
     return (
       <div>
-        <div>width: {width}px</div>
-        <div>height: {height}px</div>
+        <div>title: {title}</div>
       </div>
     );
   },
@@ -29,17 +28,11 @@ const Demo = createComponent({
 ## Reference
 
 ```typescript
-function useWindowSize(): {
-  width: Ref<number>;
-  height: Ref<number>;
-  widthPixel: Ref<string>;
-  heightPixel: Ref<string>;
+function useTitle(): {
+  title: Ref<string>;
 };
 ```
 
 ### `ReturnValue`
 
-- `width`: [`Ref<number>`](https://github.com/vuejs/composition-api/blob/a7a68bda5d32139c6cf05b45e385cf8d4ce86707/src/reactivity/ref.ts#L8-L10)
-- `height`: [`Ref<number>`](https://github.com/vuejs/composition-api/blob/a7a68bda5d32139c6cf05b45e385cf8d4ce86707/src/reactivity/ref.ts#L8-L10)
-- `widthPixel`: [`Ref<string>`](https://github.com/vuejs/composition-api/blob/a7a68bda5d32139c6cf05b45e385cf8d4ce86707/src/reactivity/ref.ts#L8-L10)
-- `heightPixel`: [`Ref<string>`](https://github.com/vuejs/composition-api/blob/a7a68bda5d32139c6cf05b45e385cf8d4ce86707/src/reactivity/ref.ts#L8-L10)
+- `title`: [`Ref<string>`](https://github.com/vuejs/composition-api/blob/a7a68bda5d32139c6cf05b45e385cf8d4ce86707/src/reactivity/ref.ts#L8-L10)

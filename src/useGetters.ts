@@ -1,3 +1,3 @@
-import createVuexHelper, { Helper, useGetters } from './helpers/vuex';
+import createVuexHelper, { Helper, useGetters } from './helpers/vuex'
 
-export default createVuexHelper<useGetters>(Helper.Getters);
+export default createVuexHelper<useGetters>(Helper.Getters)

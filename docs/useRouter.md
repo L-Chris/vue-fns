@@ -1,6 +1,6 @@
 # useRouter
 
-> You need to [use a plugin](https://github.com/u3u/vue-hooks#usage) before using this hook.
+> You need to [use a plugin](https://github.com/L-Chris/vue-fns#usage) before using this hook.
 
 Vue hook for [vue-router](https://router.vuejs.org).
 
@@ -8,7 +8,7 @@ Vue hook for [vue-router](https://router.vuejs.org).
 
 ```jsx {6,11,19,23}
 import { createComponent, onMounted, onUnmounted } from '@vue/composition-api';
-import { useRouter } from '@u3u/vue-hooks';
+import { useRouter } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {

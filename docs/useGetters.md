@@ -1,6 +1,6 @@
 # useGetters
 
-> You need to [use a plugin](https://github.com/u3u/vue-hooks#usage) before using this hook.
+> You need to [use a plugin](https://github.com/L-Chris/vue-fns#usage) before using this hook.
 
 Vue hook for [`mapGetters`](https://vuex.vuejs.org/api/#mapgetters).
 
@@ -8,7 +8,7 @@ Vue hook for [`mapGetters`](https://vuex.vuejs.org/api/#mapgetters).
 
 ```jsx {8,9,15,19}
 import { createComponent } from '@vue/composition-api';
-import { useStore, useGetters } from '@u3u/vue-hooks';
+import { useStore, useGetters } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {

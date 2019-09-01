@@ -1,21 +1,19 @@
-/* eslint import/no-extraneous-dependencies: off */
-import Vue from 'vue';
-import { shallowMount, createLocalVue } from '@vue/test-utils';
-import VueCompositionAPI, { createComponent } from '@vue/composition-api';
-import { SetupFunction, Data } from '@vue/composition-api/dist/component';
-import { createRouter, createStore } from '../mocks';
-import hooks from '..';
+import VueCompositionAPI, { createComponent } from '@vue/composition-api'
+import { Data, SetupFunction } from '@vue/composition-api/dist/component'
+import { createLocalVue, shallowMount } from '@vue/test-utils'
+import Vue from 'vue'
 
-const localVue = createLocalVue();
-const router = createRouter(localVue);
-const store = createStore(localVue);
+import hooks from '..'
+import { createRouter, createStore } from '../mocks'
 
-localVue.use(hooks);
-localVue.use(VueCompositionAPI);
+const localVue = createLocalVue()
+const router = createRouter(localVue)
+const store = createStore(localVue)
 
-export default function renderHook<V, Props = unknown, Data = unknown>(
-  setup: SetupFunction<Props, Data>,
-) {
+localVue.use(hooks)
+localVue.use(VueCompositionAPI)
+
+export default function renderHook<V, Props = unknown, Data = unknown>(setup: SetupFunction<Props, Data>) {
   const App = createComponent({
     template: `
       <div ref="app" id="app" :style="{ width: '1280px', height: '800px' }">
@@ -23,15 +21,14 @@ export default function renderHook<V, Props = unknown, Data = unknown>(
         <router-view />
       </div>
     `,
-
-    setup,
-  });
+    setup
+  })
 
   // @ts-ignore
   return shallowMount<Vue & V>(App, {
     localVue,
     router,
     store,
-    stubs: ['router-view'],
-  });
+    stubs: ['router-view']
+  })
 }

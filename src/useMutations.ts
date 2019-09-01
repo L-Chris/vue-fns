@@ -1,3 +1,3 @@
-import createVuexHelper, { Helper, useMutations } from './helpers/vuex';
+import createVuexHelper, { Helper, useMutations } from './helpers/vuex'
 
-export default createVuexHelper<useMutations>(Helper.Mutations);
+export default createVuexHelper<useMutations>(Helper.Mutations)

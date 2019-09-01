@@ -1,23 +1,23 @@
-import { ref, computed, onMounted, onUnmounted } from '@vue/composition-api';
+import { computed, onMounted, onUnmounted, ref } from '@vue/composition-api'
 
 export default function useWindowSize() {
-  const width = ref(window.innerWidth);
-  const height = ref(window.innerHeight);
+  const width = ref(window.innerWidth)
+  const height = ref(window.innerHeight)
   const update = () => {
-    width.value = window.innerWidth;
-    height.value = window.innerHeight;
-  };
+    width.value = window.innerWidth
+    height.value = window.innerHeight
+  }
 
-  const widthPixel = computed(() => `${width.value}px`);
-  const heightPixel = computed(() => `${height.value}px`);
+  const widthPixel = computed(() => `${width.value}px`)
+  const heightPixel = computed(() => `${height.value}px`)
 
   onMounted(() => {
-    window.addEventListener('resize', update);
-  });
+    window.addEventListener('resize', update)
+  })
 
   onUnmounted(() => {
-    window.removeEventListener('resize', update);
-  });
+    window.removeEventListener('resize', update)
+  })
 
-  return { width, height, widthPixel, heightPixel };
+  return { width, height, widthPixel, heightPixel }
 }

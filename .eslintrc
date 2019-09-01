@@ -1,11 +1,19 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
   "extends": [
-    "eslint-config-airbnb-base",
+    "eslint:recommended",
     "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
+  "plugins": ["prettier", "simple-import-sort", "import"],
   "env": {
     "browser": true,
     "es6": true,
@@ -15,6 +23,27 @@
     "no-undef": "off",
     "no-unused-vars": "off",
     "global-require": "off",
-    "import/no-extraneous-dependencies": "off"
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120,
+        "singleQuote": true,
+        "semi": false,
+        "trailingComma": "none",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "insertPragma": false,
+        "requirePragma": false
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "import/no-useless-path-segments": "error",
+    "import/no-mutable-exports": "off",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
+    "import/exports-last": "off",
+    "import/group-exports": "off",
+    "simple-import-sort/sort": "error"
   }
 }

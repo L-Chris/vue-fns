@@ -1,35 +1,34 @@
-/* eslint import/no-extraneous-dependencies: off */
-import 'vue-tsx-support/enable-check';
-import Vue from 'vue';
-import { storiesOf } from '@storybook/vue';
-import { createComponent } from '@vue/composition-api';
-import { useCounter } from '..';
-import { ShowDocs } from './components';
+import { storiesOf } from '@storybook/vue'
+import { createComponent } from '@vue/composition-api'
+import Vue from 'vue'
+
+import { useCounter } from '..'
+import { ShowDocs } from './components'
 
 type Inject = {
-  count: number;
-  inc: Function;
-  dec: Function;
-  set: Function;
-  reset: Function;
-};
+  count: number
+  inc: Function
+  dec: Function
+  set: Function
+  reset: Function
+}
 
-const Docs = () => <ShowDocs md={require('../../docs/useCounter.md')} />;
+const Docs = () => <ShowDocs md={require('../../docs/useCounter.md')} />
 
 const Demo = createComponent({
   setup() {
-    const [count, { inc, dec, set, reset }] = useCounter();
+    const [count, { inc, dec, set, reset }] = useCounter()
     return {
       count,
       inc,
       dec,
       set,
-      reset,
-    };
+      reset
+    }
   },
 
   render(this: Vue & Inject) {
-    const { count, inc, dec, set, reset } = this;
+    const { count, inc, dec, set, reset } = this
     return (
       <div>
         <div>count: {count}</div>
@@ -41,11 +40,11 @@ const Demo = createComponent({
         <button onClick={() => reset()}>Reset</button>
         <button onClick={() => reset(25)}>Reset (25)</button>
       </div>
-    );
-  },
-});
+    )
+  }
+})
 
 storiesOf('useCounter', module)
   // @ts-ignore
   .add('docs', () => Docs)
-  .add('demo', () => Demo);
+  .add('demo', () => Demo)

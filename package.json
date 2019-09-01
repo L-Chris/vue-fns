@@ -1,5 +1,5 @@
 {
-  "name": "@l-chris/vue-fns",
+  "name": "vue-fns",
   "description": "Collection of Vue Hooks",
   "version": "0.1.0",
   "publishConfig": {
@@ -30,12 +30,11 @@
     "build:es": "tsc -m esNext --outDir esm",
     "build": "yarn clean && yarn build:cjs && yarn build:es",
     "clean": "rimraf lib esm",
-    "lint": "eslint 'src/**/*.ts'",
+    "lint": "eslint src/**/*.{ts,tsx} --fix",
     "lint:types": "tsc --noEmit",
     "lint:prettier": "prettier '**/*.{ts,md,mdx}' --check",
     "format": "prettier '**/*.{ts,md,mdx}' --write",
-    "release": "semantic-release",
-    "prepublishOnly": "yarn test && yarn build"
+    "build:publish": "yarn test && yarn build"
   },
   "author": {
     "name": "L-Chris",
@@ -76,14 +75,13 @@
     "@vue/babel-preset-jsx": "^1.1.0",
     "@vue/composition-api": "^0.2.0",
     "@vue/test-utils": "^1.0.0-beta.29",
-    "all-contributors-cli": "^6.8.1",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "eslint": "^6.2.2",
-    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-simple-import-sort": "^4.0.0",
     "github-markdown-css": "^3.0.1",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.3",
@@ -96,35 +94,24 @@
     "prettier": "^1.18.2",
     "prismjs": "^1.17.1",
     "rimraf": "^3.0.0",
-    "semantic-release": "^15.13.24",
     "typescript": "^3.5.3",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-router": "^3.1.2",
     "vue-template-compiler": "^2.6.10",
-    "vue-tsx-support": "^2.3.1",
     "vuex": "^3.1.1",
     "yorkie": "^2.0.0"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ]
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
     "commit-msg": "commitlint -E GIT_PARAMS"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix"
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
     ],
-    "*.{ts,md,mdx}": [
+    "*.{md,mdx}": [
       "prettier --write",
       "prettier --check",
       "git add"

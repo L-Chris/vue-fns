@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import { ref, onMounted } from '@vue/composition-api';
+import { onMounted, ref } from '@vue/composition-api'
+import Vue from 'vue'
 
 export default function useMountedState() {
-  const isMounted = ref(false);
+  const isMounted = ref(false)
 
   onMounted(async () => {
-    await Vue.nextTick();
-    isMounted.value = true;
-  });
+    await Vue.nextTick()
+    isMounted.value = true
+  })
 
-  return isMounted;
+  return isMounted
 }

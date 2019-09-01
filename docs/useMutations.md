@@ -1,6 +1,6 @@
 # useMutations
 
-> You need to [use a plugin](https://github.com/u3u/vue-hooks#usage) before using this hook.
+> You need to [use a plugin](https://github.com/L-Chris/vue-fns#usage) before using this hook.
 
 Vue hook for [`mapMutations`](https://vuex.vuejs.org/api/#mapmutations).
 
@@ -8,7 +8,7 @@ Vue hook for [`mapMutations`](https://vuex.vuejs.org/api/#mapmutations).
 
 ```jsx {17,18,24,29,36,37}
 import { createComponent } from '@vue/composition-api';
-import { useState, useGetters, useMutations } from '@u3u/vue-hooks';
+import { useState, useGetters, useMutations } from 'vue-fns';
 
 const Demo = createComponent({
   setup() {
